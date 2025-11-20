@@ -124,6 +124,18 @@ export async function initializeDatabase() {
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
       FOREIGN KEY (car_id) REFERENCES cars(id),
       FOREIGN KEY (rental_id) REFERENCES rentals(id)
+    )`,
+
+    // Payments table
+    `CREATE TABLE IF NOT EXISTS payments (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      rental_id INTEGER NOT NULL,
+      amount REAL NOT NULL,
+      payment_method TEXT,
+      payment_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+      notes TEXT,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (rental_id) REFERENCES rentals(id)
     )`
   ];
   
