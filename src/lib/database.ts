@@ -228,6 +228,16 @@ export interface Video {
   created_at: string;
 }
 
+export interface Payment {
+  id: number;
+  rental_id: number;
+  amount: number;
+  payment_method?: string;
+  payment_date: string;
+  notes?: string;
+  created_at: string;
+}
+
 // Database helper functions
 export async function runQuery(sql: string, params: any[] = []): Promise<any> {
   const database = await getDatabase();
