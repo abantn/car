@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { initializeDatabase, runQuery, allQuery, Car } from '@/lib/database';
+import { initializeDatabase, runQuery, allQuery, getQuery, Car } from '@/lib/database';
 
 // Initialize database on first request
 let dbInitialized = false;
